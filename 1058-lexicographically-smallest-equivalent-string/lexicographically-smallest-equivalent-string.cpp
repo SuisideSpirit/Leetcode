@@ -1,11 +1,18 @@
 class Solution {
 public:
-    int find(char a , vector <int> &v){
-        int pos = (int)(a) - 97 ;
-        while(pos != v[pos]){
-            pos = v[pos] ; 
+    // int find(char a , vector <int> &v){
+    //     int pos = (int)(a) - 97 ;
+    //     while(pos != v[pos]){
+    //         pos = v[pos] ; 
+    //     }
+    //     return pos ;
+    // }
+    int find(char a, vector<int> &v) {
+        int pos = (int)(a) - 97;
+        if (v[pos] != pos) {
+            v[pos] = find((char)(v[pos] + 97), v); // Recursively find and compress
         }
-        return pos ;
+        return v[pos];
     }
     void update(char a , char b , vector <int> &v){
         int pos1 = find(a,v) ; 

@@ -15,7 +15,6 @@ public:
                 i++;
             }
             i--;
-            cout<<start<<" "<<end<<endl;
             maxH = max(maxH , end - start+ 1) ; 
         }
         int maxV = 0 ;
@@ -28,10 +27,8 @@ public:
                 i++;
             }
             i--;
-            cout<<start<<" "<<end<<endl;
             maxV = max(maxV , end - start + 1) ; 
         }
-        cout<<maxH<<" "<<maxV<<endl;
         int ans = min(maxH , maxV) ;
         return ans*ans ; 
     }

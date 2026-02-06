@@ -20,10 +20,14 @@ public:
     int minRemoval(vector<int>& nums, int k) {
         sort(nums.begin() , nums.end()) ; 
         int n = nums.size() ;
-        ll ans= n-1; 
+        ll ans = n-1; 
+        int idx = 0;
         for(int i = 0 ; i<n ; i++){
             ll temp = i ; 
-            int idx = floorIndex(nums,(ll)(nums[i])*(ll)(k),i) ; 
+            while(idx < n-1 && nums[idx] <= ((ll)(nums[i])*(ll)(k)) ) {
+                idx++;
+            }
+            if(nums[idx] > ((ll)(nums[i])*(ll)(k))) idx--;
             temp += (n-1-idx) ; 
             ans = min(temp,ans) ;
         }

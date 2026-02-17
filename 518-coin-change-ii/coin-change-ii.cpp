@@ -19,7 +19,7 @@ public:
     }
     int change(int amount, vector<int>& coins) {
         int n = coins.size()  ;
-        dp.resize(300,vector <int> (10000 , -1) ) ;
+        dp.resize(n+5,vector <int> (amount+10 , -1) ) ;
         return solve(0,amount,coins) ;
     }
 };

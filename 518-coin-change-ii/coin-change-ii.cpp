@@ -6,15 +6,13 @@ public:
         if(amount == 0 ) return 1 ;
         if(idx >= c.size()) return 0 ;
         if(dp[idx][amount] != -1) return dp[idx][amount] ;
-        int ways = 0 ;
         int count = 0 ;
         
-        while(amount - count*c[idx] >= 0){
-            ways += solve(idx+1,amount - count*c[idx] ,c) ;
-            count++;
-        }
+        int take = 0 ;
+        if(amount >= c[idx]) take = solve(idx, amount - c[idx] ,c) ;
+        int leave = solve(idx+1,amount,c) ;
 
-        return dp[idx][amount] = ways ; 
+        return dp[idx][amount] = take + leave ; 
 
     }
     int change(int amount, vector<int>& coins) {

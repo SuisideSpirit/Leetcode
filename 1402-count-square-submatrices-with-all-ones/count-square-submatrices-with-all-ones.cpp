@@ -20,9 +20,8 @@ public:
         int ans =0 ;
         for(int i = 0 ; i<n ; i++){
             for(int j = 0 ; j<m;j++){
-                if(dp[i][j] == -1) solve(i,j,matrix) ; 
-                ans += dp[i][j] ;
                 
+                ans += solve(i,j,matrix) ; 
             }
         }
         return ans ;

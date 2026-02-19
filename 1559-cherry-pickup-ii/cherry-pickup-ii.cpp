@@ -10,7 +10,7 @@ public:
 
         int ans = g[i][j1] + g[i][j2] ;
         if(j1 == j2) ans -= g[i][j1] ; 
-        vector<int> movements = {-1,1,0} ; 
+        int movements[] = {-1, 1, 0};
         int temp = 0 ; 
         for(int x = 0 ; x < 3 ; x++){
             for(int y = 0 ; y < 3 ;y++){

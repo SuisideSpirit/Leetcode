@@ -22,9 +22,8 @@ public:
             for(int j = 0 ; j<m;j++){
                 if(dp[i][j] == -1) solve(i,j,matrix) ; 
                 ans += dp[i][j] ;
-                cout<<dp[i][j]<<" ";
+                
             }
-            cout<<endl;
         }
         return ans ;
     }

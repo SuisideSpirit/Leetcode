@@ -5,12 +5,12 @@ public:
         if(i > j) return 0 ; 
         if(dp[i][j] != -1) return dp[i][j] ; 
         int both = 0 ;
-        if(s[i] == s[j] && i!=j) both = 2 + solve(i+1,j-1,s) ; 
-        if(s[i] == s[j] && i==j) both = 1 + solve(i+1,j-1,s) ; 
+        if (s[i] == s[j])
+            return dp[i][j] = (i == j ? 1 : 2) + solve(i+1, j-1, s);
         int left = solve(i+1, j ,s) ;
         int right = solve(i, j-1 ,s) ;
 
-        return dp[i][j] = max(both,max(left , right)) ; 
+        return dp[i][j] = max(left , right) ; 
     }
     int longestPalindromeSubseq(string s) {
         int n = s.length() ; 

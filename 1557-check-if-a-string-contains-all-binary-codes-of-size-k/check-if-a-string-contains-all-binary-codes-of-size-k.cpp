@@ -11,7 +11,7 @@ public:
             curr = curr + s[i] ; 
             st.insert(curr) ; 
         }
-        if(st.size() == pow(2,k)) return true ; 
+        if(st.size() == 1<<k) return true ; 
         return false;        
     }
 };

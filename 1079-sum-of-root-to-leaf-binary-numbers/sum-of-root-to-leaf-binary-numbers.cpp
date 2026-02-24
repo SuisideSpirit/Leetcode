@@ -12,7 +12,7 @@
 class Solution {
 public:
     int ans = 0;
-    int to_binary(string s){
+    int to_binary(string &s){
         int n = s.length() ; 
         int res = 0 ;
         int mult = 1 ;

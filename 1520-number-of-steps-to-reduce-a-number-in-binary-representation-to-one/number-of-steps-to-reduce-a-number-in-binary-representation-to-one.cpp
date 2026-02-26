@@ -2,7 +2,6 @@ class Solution {
 public:
     int numSteps(string s) {
         int c = 0 ;
-        cout<<s<<endl;
         while(s != "1"){
             int n = s.length() ; 
             if(s[n - 1] == '1'){
@@ -18,7 +17,6 @@ public:
                 if(carry) s = "1" + s ;
             }
             else s.erase(n-1,1) ;
-            cout<<s<<endl;
             c++;
         }
         return c; 

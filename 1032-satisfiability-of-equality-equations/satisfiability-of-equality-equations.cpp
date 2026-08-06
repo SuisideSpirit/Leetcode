@@ -37,12 +37,10 @@ public:
         }
         for(auto ele : check){
             int x= ele.first , y = ele.second ; 
-            cout<<parent[x]<<" "<<parent[y]<<endl;
             int px = find_parent(x ,parent) ; 
             int py = find_parent(y , parent) ; 
             if(px == -1 || py == -1) continue ;
             if(px == py){
-                cout<<px<<" "<<py<<endl ;
                 return false ;
             }
         }

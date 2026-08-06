@@ -11,12 +11,13 @@ public:
         greater<pair<int,pair<int,int>>>> pq ; 
         pq.push({0 , { 0 , 1 }}) ; 
         vector <vector <int>> dist(n,vector <int> (k+1 , INT_MAX)) ; 
-        dist[0][0] = 0 ; 
+        dist[0][1] = 0 ; 
         while(pq.size() != 0){
             auto top = pq.top() ; 
             pq.pop() ; 
             int curr = top.second.first, w = top.first , rep = top.second.second ;
             if(curr == n-1) return w ; 
+            if (w != dist[curr][rep]) continue;
             for(auto ele : mp[curr]){
                 int next = ele.first , nw = w + ele.second;
                 if(label[curr] != label[next] && dist[next][1] > nw){ 

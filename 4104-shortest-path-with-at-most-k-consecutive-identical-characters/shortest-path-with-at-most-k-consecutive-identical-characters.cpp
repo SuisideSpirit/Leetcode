@@ -1,7 +1,7 @@
 class Solution {
 public:
     int shortestPath(int n, vector<vector<int>>& edges, string label, int k) {
-        unordered_map <int,vector <pair<int,int>>> mp ;
+        vector<vector<pair<int,int>>> mp(n) ; 
         for(auto ele : edges){
             int u = ele[0] , v = ele[1], w = ele[2] ;
             mp[u].push_back({v,w}) ; 

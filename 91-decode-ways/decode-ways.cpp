@@ -1,7 +1,7 @@
 class Solution {
 public:
     vector <int> dp ;
-    int solve(int idx , string s){
+    int solve(int idx , string& s){
         int n = s.size() ;
         if(idx == s.size()) return 1 ;
         if(idx >= s.size() || s[idx] == '0') return 0 ; 

@@ -8,8 +8,7 @@ public:
         int temp = ans ;
         if(k == n) return ans ; 
         for(int i = 0 ; i < k ;i++ ){
-            temp = temp + v[i] - v[n-k + i] ; 
-            cout<<v[n-1-k + i]<<endl;
+            temp = temp + v[i] - v[n-k+i] ; 
             ans = max(ans,temp) ;
         }
         return ans ;
